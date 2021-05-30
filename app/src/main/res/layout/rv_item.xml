@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/rv_item_content_tv"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="@color/purple_500"
+        android:textSize="@dimen/sp_18"
+        android:textColor="@color/purple_200"
+        tools:text="@string/load_more"
+        android:gravity="center"/>
+</layout>

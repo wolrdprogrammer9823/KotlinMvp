@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/content_et"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:inputType="text"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/add_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/content_et"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/content_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add_btn"
+        android:overScrollMode="never"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/load_more_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/content_rv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="@string/expand"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/sp_18"
+        android:visibility="gone"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/load_more_arrow_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/content_rv"
+        app:layout_constraintLeft_toRightOf="@id/load_more_tv"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginStart="@dimen/dp_10"
+        app:srcCompat="@drawable/ic_arrow_upward"
+        android:visibility="gone"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
