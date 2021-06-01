@@ -51,7 +51,14 @@ class MainActivity : BaseMvpActivity<MainPresenter>(), MainView {
 
                 val elementOver5 = dataSet.size > 5
                 if (elementOver5) {
-                    mDataSource.addAll(dataSet.subList(0, 5))
+                    if (mIsExpand) {
+
+                        mDataSource.addAll(dataSet.subList(0, 5))
+                    } else {
+
+                        mDataSource.addAll(dataSet)
+                        updateText(true)
+                    }
                 } else {
                     mDataSource.addAll(dataSet)
                 }

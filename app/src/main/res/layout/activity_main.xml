@@ -23,35 +23,47 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/content_et"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/content_rv"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/add_btn"
-        android:overScrollMode="never"/>
+        app:layout_constraintTop_toBottomOf="@id/add_btn">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/load_more_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/content_rv"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="@dimen/dp_10"
-        android:text="@string/expand"
-        android:textColor="@color/gray"
-        android:textSize="@dimen/sp_18"
-        android:visibility="gone"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/load_more_arrow_iv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/content_rv"
-        app:layout_constraintLeft_toRightOf="@id/load_more_tv"
-        android:layout_marginTop="@dimen/dp_10"
-        android:layout_marginStart="@dimen/dp_10"
-        app:srcCompat="@drawable/ic_arrow_upward"
-        android:visibility="gone"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/content_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:overScrollMode="never"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/load_more_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/content_rv"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="@string/expand"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/sp_18"
+                android:visibility="gone"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/load_more_arrow_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/content_rv"
+                app:layout_constraintLeft_toRightOf="@id/load_more_tv"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginStart="@dimen/dp_10"
+                app:srcCompat="@drawable/ic_arrow_upward"
+                android:visibility="gone"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
