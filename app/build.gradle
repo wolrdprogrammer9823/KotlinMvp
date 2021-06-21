@@ -21,8 +21,20 @@ android {
     }
 
     buildTypes {
+        //正式环境
         release {
+            minifyEnabled true
+            buildConfigField "boolean", "inner_release", "false"
+            buildConfigField "String", "packge_time", "\"${packageTime()}\""
+            buildConfigField "String", "build0_path", "\"${onePath()}\""
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        //debug
+        debug {
             minifyEnabled false
+            buildConfigField "boolean", "inner_release", "false"
+            buildConfigField "String", "packge_time", "\"${packageTime()}\""
+            buildConfigField "String", "build0_path", "\"${onePath()}\""
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -57,4 +69,17 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}
+
+static def packageTime() {
+    return new Date().format("yyyy-MM-dd",TimeZone.getTimeZone("UTC"))
+}
+
+def onePath() {
+    String path = getRootProject().getRootDir().path
+    path = path.replace("\\", "")
+    String[] paths = path.split(":")
+    String divider = "\\\\"
+    String newPath = paths[0] + ":" + divider + paths[1]
+    return newPath
 }

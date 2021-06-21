@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.wolfsea.kotlinmvp.base.BaseMvpActivity
 import com.wolfsea.kotlinmvp.divider.DividerItemDecoration
 import com.wolfsea.kotlinmvp.drakeer.MultiTypeAdapter
+import com.wolfsea.kotlinmvp.extendmethod.toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseMvpActivity<MainPresenter>(), MainView {
@@ -63,6 +64,8 @@ class MainActivity : BaseMvpActivity<MainPresenter>(), MainView {
                     mDataSource.addAll(dataSet)
                 }
                 setViewVisibility(elementOver5)
+
+                toast("添加成功...")
             }
             EXPAND -> {
 
