@@ -1,5 +1,4 @@
 package com.wolfsea.kotlinmvp
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,13 +12,12 @@ import com.wolfsea.kotlinmvp.drakeer.ItemViewBinder
  *@author liuliheng
  *@time 2021/5/30  17:21
  **/
-class MainRvBinder(private val context: Context) : ItemViewBinder<String, MainRvBinder.MainViewHolder>() {
-
+class MainRvBinder : ItemViewBinder<String, MainRvBinder.MainViewHolder>() {
 
     override fun onCreateViewHolder(inflater: LayoutInflater, parent: ViewGroup): MainViewHolder {
 
         val itemBinding : RvItemBinding =
-            DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.rv_item, parent, false)
+            DataBindingUtil.inflate(inflater, R.layout.rv_item, parent, false)
         return MainViewHolder(itemBinding.root)
     }
 

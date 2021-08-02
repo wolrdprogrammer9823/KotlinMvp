@@ -88,7 +88,7 @@ class MainActivity : BaseMvpActivity<MainPresenter>(), MainView {
      *@time: 2021/5/30 18:10
      **/
     private fun initRv() {
-        val itemViewBinder = MainRvBinder(this)
+        val itemViewBinder = MainRvBinder()
         mAdapter = MultiTypeAdapter(mDataSource)
         mAdapter.register(String::class.java, itemViewBinder)
         content_rv.apply {
