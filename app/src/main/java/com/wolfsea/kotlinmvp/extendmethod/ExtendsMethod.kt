@@ -126,3 +126,12 @@ fun SingleClickListener.setViews(vararg views: View) {
         view.setOnClickListener(this)
     }
 }
+
+
+fun View.showSelf() {
+    this.visibility = View.VISIBLE
+}
+
+fun View.hideSelf() {
+    this.visibility = View.GONE
+}

@@ -4,4 +4,6 @@
     <string name="load_more">加载更多</string>
     <string name="add">添加</string>
     <string name="expand">展开</string>
+    <string name="to_main">to_main</string>
+    <string name="to_coroutine">to_coroutine</string>
 </resources>
