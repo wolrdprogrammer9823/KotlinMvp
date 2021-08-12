@@ -22,5 +22,13 @@ interface CoroutineContract {
     interface Presenter : MvpPresenter<View> {
 
         fun syncWithContext()
+
+        fun syncNoneWithContext()
+
+        fun asyncWithContextForAwait()
+
+        fun adapterCoroutineQuery()
+
+        fun retrofitSuspendQuery()
     }
 }

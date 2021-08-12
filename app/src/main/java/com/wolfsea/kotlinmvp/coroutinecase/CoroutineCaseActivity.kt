@@ -52,5 +52,21 @@ class CoroutineCaseActivity : AppCompatActivity(), CoroutineContract.View {
             presenter.syncWithContext()
         }
 
+        syncNoneWithContext.setOnClickListener {
+            presenter.syncNoneWithContext()
+        }
+
+        asyncWithContextForAwait.setOnClickListener {
+            presenter.asyncWithContextForAwait()
+        }
+
+        adapterBtn.setOnClickListener {
+           presenter.adapterCoroutineQuery()
+        }
+
+        retrofitBtn.setOnClickListener {
+            presenter.retrofitSuspendQuery()
+        }
     }
+
 }

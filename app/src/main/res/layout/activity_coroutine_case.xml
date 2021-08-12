@@ -20,6 +20,45 @@
         android:textColor="@android:color/white"
         android:text="切换协程-顺序异步请求"/>
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/syncNoneWithContext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/teal_700"
+        android:textColor="@android:color/white"
+        android:text="不切换协程-顺序异步请求"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/asyncWithContextForAwait"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/teal_700"
+        android:textColor="@android:color/white"
+        android:text="切换协程-并发异步请求"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/adapterBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/teal_700"
+        android:textColor="@android:color/white"
+        android:text="Adapter适配协程请求"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/retrofitBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/teal_700"
+        android:textColor="@android:color/white"
+        android:text="Retrofit协程官方支持"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textView"
