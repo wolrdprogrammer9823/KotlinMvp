@@ -14,13 +14,13 @@ class CoroutinePresenter : CoroutineContract.Presenter, BasePresenter<CoroutineC
     override fun syncWithContext() {
         presenterScope.launch {
 
-            view.showLoadingView()
+            view?.showLoadingView()
             try {
                 val ganks = Repository.querySyncWithContext()
-                view.showLoadingSuccessView(ganks = ganks)
+                view?.showLoadingSuccessView(ganks = ganks)
             } catch (e: Exception) {
                 e.printStackTrace()
-                view.showLoadingErrorView()
+                view?.showLoadingErrorView()
             } finally {}
         }
     }
@@ -28,52 +28,52 @@ class CoroutinePresenter : CoroutineContract.Presenter, BasePresenter<CoroutineC
     override fun syncNoneWithContext() {
         presenterScope.launch {
 
-            view.showLoadingView()
+            view?.showLoadingView()
             try {
                 val ganks = Repository.querySyncNoneWithContext()
-                view.showLoadingSuccessView(ganks = ganks)
+                view?.showLoadingSuccessView(ganks = ganks)
             } catch (e: Exception) {
                 e.printStackTrace()
-                view.showLoadingErrorView()
+                view?.showLoadingErrorView()
             } finally {}
         }
     }
 
     override fun asyncWithContextForAwait() {
         presenterScope.launch {
-            view.showLoadingView()
+            view?.showLoadingView()
             try {
                 val ganks = Repository.queryAsyncWithContextForAwait()
-                view.showLoadingSuccessView(ganks = ganks)
+                view?.showLoadingSuccessView(ganks = ganks)
             } catch (e: Exception) {
                 e.printStackTrace()
-                view.showLoadingErrorView()
+                view?.showLoadingErrorView()
             } finally {}
         }
     }
 
     override fun adapterCoroutineQuery() {
         presenterScope.launch {
-            view.showLoadingView()
+            view?.showLoadingView()
             try {
                 val ganks = Repository.adapterCoroutineQuery()
-                view.showLoadingSuccessView(ganks = ganks)
+                view?.showLoadingSuccessView(ganks = ganks)
             } catch (e: Exception) {
                 e.printStackTrace()
-                view.showLoadingErrorView()
+                view?.showLoadingErrorView()
             } finally {}
         }
     }
 
     override fun retrofitSuspendQuery() {
         presenterScope.launch {
-            view.showLoadingView()
+            view?.showLoadingView()
             try {
                 val ganks = Repository.retrofitSuspendQuery()
-                view.showLoadingSuccessView(ganks = ganks)
+                view?.showLoadingSuccessView(ganks = ganks)
             } catch (e: Exception) {
                 e.printStackTrace()
-                view.showLoadingErrorView()
+                view?.showLoadingErrorView()
             } finally {}
         }
     }

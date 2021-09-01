@@ -9,9 +9,9 @@ import kotlinx.coroutines.cancel
  *@author liuliheng
  *@time 2021/8/11  23:38
  **/
-open class BasePresenter<V : MvpView> : MvpPresenter<V> {
+open class BasePresenter<V : IBaseMvpView> : IBaseMvpPresenter<V> {
 
-    lateinit var view: V
+    var view: V? = null
 
     val presenterScope : CoroutineScope by lazy {
 
@@ -26,6 +26,11 @@ open class BasePresenter<V : MvpView> : MvpPresenter<V> {
     override fun detachView() {
 
         presenterScope.cancel()
+
+        if (this.view != null) {
+
+            this.view = null
+        }
     }
 
 }

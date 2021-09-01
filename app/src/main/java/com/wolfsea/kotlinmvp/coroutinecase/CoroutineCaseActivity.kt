@@ -1,7 +1,7 @@
 package com.wolfsea.kotlinmvp.coroutinecase
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.wolfsea.kotlinmvp.R
+import com.wolfsea.kotlinmvp.base2.BaseMvpActivity
 import com.wolfsea.kotlinmvp.bean.Gank
 import com.wolfsea.kotlinmvp.coroutinemvp.CoroutineContract
 import com.wolfsea.kotlinmvp.coroutinemvp.CoroutinePresenter
@@ -10,24 +10,13 @@ import com.wolfsea.kotlinmvp.extendmethod.showSelf
 import com.wolfsea.kotlinmvp.extendmethod.toast
 import kotlinx.android.synthetic.main.activity_coroutine_case.*
 
-class CoroutineCaseActivity : AppCompatActivity(), CoroutineContract.View {
-
-    private val presenter = CoroutinePresenter()
+class CoroutineCaseActivity : BaseMvpActivity<CoroutineContract.View, CoroutinePresenter>(), CoroutineContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_coroutine_case)
-
-        presenter.attachView(this)
-
         initEvent()
-    }
-
-    override fun onDestroy() {
-
-        super.onDestroy()
-        presenter.detachView()
     }
 
     override fun showLoadingView() {

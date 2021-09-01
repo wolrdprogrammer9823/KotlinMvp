@@ -6,7 +6,7 @@ import androidx.annotation.UiThread
  *@author liuliheng
  *@time 2021/8/11  23:35
  **/
-interface MvpPresenter<V : MvpView> {
+interface IBaseMvpPresenter<V : IBaseMvpView> {
 
     @UiThread
     fun attachView(view:V)

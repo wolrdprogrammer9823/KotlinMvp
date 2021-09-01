@@ -1,6 +1,6 @@
 package com.wolfsea.kotlinmvp.coroutinemvp
-import com.wolfsea.kotlinmvp.base2.MvpPresenter
-import com.wolfsea.kotlinmvp.base2.MvpView
+import com.wolfsea.kotlinmvp.base2.IBaseMvpPresenter
+import com.wolfsea.kotlinmvp.base2.IBaseMvpView
 import com.wolfsea.kotlinmvp.bean.Gank
 
 /**
@@ -10,7 +10,7 @@ import com.wolfsea.kotlinmvp.bean.Gank
  **/
 interface CoroutineContract {
 
-    interface View : MvpView {
+    interface View : IBaseMvpView {
 
         fun showLoadingView()
 
@@ -19,7 +19,7 @@ interface CoroutineContract {
         fun showLoadingErrorView()
     }
 
-    interface Presenter : MvpPresenter<View> {
+    interface Presenter : IBaseMvpPresenter<View> {
 
         fun syncWithContext()
 

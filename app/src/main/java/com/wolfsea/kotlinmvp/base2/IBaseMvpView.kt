@@ -5,4 +5,4 @@ package com.wolfsea.kotlinmvp.base2
  *@author liuliheng
  *@time 2021/8/11  23:35
  **/
-interface MvpView
+interface IBaseMvpView
